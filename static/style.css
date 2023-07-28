@@ -1,0 +1,36 @@
+/* Reset some default margin and padding to ensure consistency across browsers */
+body, html {
+    background-color:black ;
+    margin: 0;
+    padding: 0;
+}
+
+/* Center the form and its contents using flexbox */
+body {
+      background-color:black ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Set the body to take the full viewport height */
+    /* background-color: #f0f0f0; Optional: Adding a background color for the body */
+  }
+  
+  form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  label {
+    padding-right: 10px;
+  }
+input {
+        float: right;
+        clear: both;
+}
+select {
+        float: right;
+        clear: both;
+}
+  

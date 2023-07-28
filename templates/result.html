@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <!-- Linking CSS to HTML -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <h1>Form Submitted Successfully!</h1>
+    <p>Room: {{ room }}</p>
+    <p>Time: {{ time }}</p>
+
+    <h2>Map Data:</h2>
+    <ul>
+        {% for row in map_data %}
+        <li>{{ row }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Schedule Data:</h2>
+    <ul>
+        {% for row in schedule_data %}
+        <li>{{ row }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
