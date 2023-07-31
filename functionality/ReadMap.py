@@ -8,6 +8,7 @@ def refine_map_data(map_data):
     for key, values in roomDistances.items() :
         if roomDistances[key].__contains__(key) : 
             del roomDistances[key][key]
+        roomDistances[key][key] = -5
         roomDistances[key] = dict(sorted(values.items(), key=lambda x:x[1]))
     # Your code to refine map_data and create distance
     # distance = [...]  # Your processed data
