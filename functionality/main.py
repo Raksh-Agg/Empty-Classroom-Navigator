@@ -4,6 +4,8 @@ from functionality.ReadSchedule import refine_schedule_data
 from functionality.ReadMap import refine_map_data
 from functionality.Navigator import dfs_forward, final_function
 import csv
+
+# Final function to combine all functions spread across all other files.
 def the_apex (room, day, hour, stay_from, stay_to) :
     map_csv_file = None
     with open ("./Map_NAB.csv", 'r', encoding='utf-8-sig') as file :
@@ -25,8 +27,6 @@ def the_apex (room, day, hour, stay_from, stay_to) :
         if refined_schedule.__contains__(key) == False :
             refined_schedule[key] = [[False for _ in range(10)] for _ in range(6)]
     pathLength, path = final_function(refined_map, refined_schedule, day, room, hour, stay_from, stay_to-1)
-    # print("Path Length is : " + str(pathLength))
-    # print ("Path is -> ", end="")
     listToStr = " - ".join([str(elem) for elem in path])
     print (listToStr)
     timeStr = ""

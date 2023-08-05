@@ -1,5 +1,4 @@
 {% load static %}
-<!-- Note : Still have not solved the irregular margin in vertical race segment -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +22,6 @@
             <option value="4" {% if request.POST.day == "4" %}selected{% endif %} >Friday</option>
             <option value="5" {% if request.POST.day == "5" %}selected{% endif %} >Saturday</option>
         </select><br><br>
-
 
         
         <label for="time">Hour of class : </label>
@@ -68,12 +66,12 @@
         <input type="submit" name="submit" value="Submit">
     </form>
 
-    <!-- Display the two lines fetched from main.py -->
+    <!-- Display the two lines fetched -->
     {% if lines %}
     <div id="Output">
         <h3>Lines fetched from main.py:</h3>
-        <p>{{ lines.0 }}</p>  <!-- Use 'lines' directly to display the single string -->
-        <p>{{ lines.1 }}</p>  <!-- Use 'lines' directly to display the single string -->
+        <p>{{ lines.0 }}</p> 
+        <p>{{ lines.1 }}</p> 
     </div>
     {% endif %}
     </div>

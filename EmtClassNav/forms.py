@@ -2,6 +2,7 @@
 
 from django import forms
 
+# Taking input from HTML side, and setting constraints on those inputs
 class ClassRoomForm(forms.Form):
     room = forms.CharField(max_length=4)
     day = forms.ChoiceField(choices=[("0", "Monday"), ("1", "Tuesday"), ("2", "Wednesday"),
