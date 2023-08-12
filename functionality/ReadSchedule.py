@@ -12,21 +12,30 @@ def refine_schedule_data(schedule_data):
             continue
         elif lectureRoom < 6151 and lectureRoom > 6110 :
             continue
+        # Testing Code : 
+        # print (lecture)
         lectureTimings = lecture[9]
         if roomsOccupied.__contains__(lectureRoom) == False :
             roomsOccupied[lectureRoom] = [[False for _ in range(10)] for _ in range(6)]
         lectureTimingsParts = lectureTimings.split()
         ltpSize = len(lectureTimingsParts)
+        indexForNumStart = 0
         indexForNum = 0
         indexForDay = 0
         while indexForDay < ltpSize and indexForNum < ltpSize :
             while lectureTimingsParts[indexForNum].isdigit() == False :
                 indexForNum += 1
+            indexForNumStart = indexForNum
             if int(lectureTimingsParts[indexForNum]) > 10 :
                 break
-            while indexForDay < indexForNum :
-                roomsOccupied[lectureRoom][dayToRow[lectureTimingsParts[indexForDay]]][int(lectureTimingsParts[indexForNum])-1] = True
+            while indexForDay < indexForNumStart :
+                indexForNum = indexForNumStart
+                while indexForNum < ltpSize and lectureTimingsParts[indexForNum].isdigit() == True :
+                    if int(lectureTimingsParts[indexForNum]) > 10 :
+                        break
+                    roomsOccupied[lectureRoom][dayToRow[lectureTimingsParts[indexForDay]]][int(lectureTimingsParts[indexForNum])-1] = True
+                    indexForNum += 1
                 indexForDay += 1
             indexForDay = indexForNum + 1
-            indexForNum += 2
+            indexForNumStart += 1
     return roomsOccupied

@@ -1,5 +1,5 @@
 # Class Room Navigator
-Class Room Navigator is a Django web application that helps users to find an order of empty classrooms which require least effort from the user's side, also, finding an the order of rooms based on a class the user may have to attend during the day. Users can upload the timetable for their semester in thr form of a csv themselves, as a 'TimeTable.csv' file
+Class Room Navigator is a Django web application that helps users to find an order of empty classrooms which require least effort from the user's side, also, finding an the order of rooms based on a class the user may have to attend during the day. Users can upload the timetable for their semester in thr form of a csv themselves, as a `TimeTable.csv` file
 
 
 ## File Structure

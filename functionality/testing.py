@@ -1,8 +1,8 @@
 
 
-from functionality.ReadSchedule import refine_schedule_data 
-from functionality.ReadMap import refine_map_data
-from functionality.Navigator import dfs_forward, final_function
+from ReadSchedule import refine_schedule_data 
+from ReadMap import refine_map_data
+from Navigator import dfs_forward, final_function
 import csv
 
 # Final function to combine all functions spread across all other files.
@@ -38,4 +38,9 @@ def the_apex (room, day, hour, stay_from, stay_to) :
         if i != stay_to+8:
             timeStr = timeStr + "____"
     strList = [timeStr, listToStr]
+    print(refined_schedule[6152])
     return strList
+
+strs = the_apex('6162', '0', '1', '0', '2')
+print(strs[0])
+print(strs[1])
